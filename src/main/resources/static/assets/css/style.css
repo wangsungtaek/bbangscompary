@@ -125,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5px;
 }
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #d9232d;
+  color: #FFBB00;;
 }
 .navbar .getstarted, .navbar .getstarted:focus {
   background: #d9232d;
