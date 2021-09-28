@@ -5,6 +5,8 @@
 
     <!-- 공통 css, js, meta tag -->
     <th:block th:replace="common/head"></th:block>
+    <!-- page css -->
+    <th:block layout:fragment="css"></th:block>
 
 </head>
 
@@ -17,5 +19,6 @@
     <footer th:replace="common/footer :: footer"></footer>
     <!-- 공통 javascript -->
     <th:block th:replace="common/js"></th:block>
+    <th:block layout:fragment="js"></th:block>
 </body>
 </html>
