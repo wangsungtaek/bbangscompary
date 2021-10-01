@@ -1,0 +1,24 @@
+#heroCarousel .carousel-item h2 {
+    text-align: right;
+    line-height: 100px;
+    padding-right: 100px;
+}
+
+
+
+#about .container .row span {
+    color: #d9232d;
+}
+
+#about .container .row .col-lg-6 {
+    text-align: center;
+}
+
+#about .container .row .col-lg-6 p {
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#about .container #about_img {
+    margin-top: 60px;
+}
