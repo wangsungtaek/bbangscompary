@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/bangsCompany")
 public class MainController {
@@ -19,7 +21,7 @@ public class MainController {
         this.mainService = mainService;
     }
 
-    @GetMapping("main")
+    @GetMapping("")
     public String savePicture() {
 
         String[] channelNames = { "블로그", "블로그" };
@@ -35,10 +37,22 @@ public class MainController {
             picture.setChannelName(channelNames[i]);
             picture.setName(names[i]);
             picture.setLink(links[i]);
-            picture.setImgLink(imgLink[i]);
+            picture.setImgPath(imgLink[i]);
             mainService.save(picture);
         }
 
-        return "redirect:/";
+        return "redirect:/bangsCompany/main";
     }
+
+    @GetMapping("main")
+    public String mainPage(Model model) {
+
+        List<Picture> pictures = mainService.findPictures();
+        model.addAttribute("pictures", pictures);
+        for(Picture picture : pictures) {
+            System.out.println(picture.getName());
+        }
+        return "main";
+    }
+
 }

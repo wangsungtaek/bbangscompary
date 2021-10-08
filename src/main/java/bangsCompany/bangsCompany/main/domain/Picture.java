@@ -5,7 +5,7 @@ public class Picture {
     private Long id;
     private String name;
     private String channelName;
-    private String imgLink;
+    private String imgPath;
     private String link;
 
     public Long getId() {
@@ -32,12 +32,12 @@ public class Picture {
         this.channelName = channelName;
     }
 
-    public String getImgLink() {
-        return imgLink;
+    public String getImgPath() {
+        return imgPath;
     }
 
-    public void setImgLink(String imgLink) {
-        this.imgLink = imgLink;
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
     public String getLink() {

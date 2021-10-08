@@ -32,6 +32,7 @@ public class MemoryMainRepository implements MainRepository {
 
     @Override
     public List<Picture> findAll() {
+        System.out.println("1312312312313");
         return new ArrayList<>(store.values());
     }
 }
