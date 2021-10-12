@@ -24,14 +24,16 @@ public class MainController {
     @GetMapping("")
     public String savePicture() {
 
-        String[] channelNames = { "블로그", "블로그", "블로그" };
-        String[] names = { "하임리프티", "모메이", "망고드랍"};
+        String[] channelNames = { "블로그", "블로그", "블로그", "블로그" };
+        String[] names = { "하임리프티", "모메이", "망고드랍", "오프바운더리" };
         String[] links = { "https://blog.naver.com/zxasqw1935/222405049067"
                          , "https://blog.naver.com/mythya0730/222516475792"
-                         , "https://blog.naver.com/oioi3030/222488976196"};
+                         , "https://blog.naver.com/oioi3030/222488976196"
+                         , "https://blog.naver.com/yyyy5428/222422979389" };
         String[] imgLink = { "/img/blog/하임리프티.JPG"
                            , "/img/blog/모메이.JPG"
-                           , "/img/blog/망고드랍.JPG"};
+                           , "/img/blog/망고드랍.JPG"
+                           , "/img/blog/오프바운더리.JPG"};
 
         for( int i = 0; i < channelNames.length; i++ ) {
 
