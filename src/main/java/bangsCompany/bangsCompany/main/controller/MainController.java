@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/bangsCompany")
+@RequestMapping("")
 public class MainController {
 
     private final MainService mainService;
@@ -45,7 +45,7 @@ public class MainController {
             mainService.save(picture);
         }
 
-        return "redirect:/bangsCompany/main";
+        return "redirect:/main";
     }
 
     @GetMapping("main")
