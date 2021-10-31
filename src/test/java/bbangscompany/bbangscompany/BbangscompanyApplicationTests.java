@@ -1,10 +1,10 @@
-package bangsCompany.bangsCompany;
+package bbangscompany.bbangscompany;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BangsCompanyApplicationTests {
+class BbangscompanyApplicationTests {
 
 	@Test
 	void contextLoads() {

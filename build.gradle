@@ -5,27 +5,27 @@ plugins {
 	id 'war'
 }
 
-group = 'bangsCompany'
+group = 'bbangscompany'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '8'
+sourceCompatibility = '1.8'
 apply plugin: 'war'
-
-repositories {
-	mavenCentral()
-}
 
 bootWar {
 	archiveBaseName = 'bbangscompany'
-	archiveFileName = 'bbangscompany.war'
+	archiveFileName = 'ROOT.war'
 	archiveVersion = "0.0.0"
+}
+
+repositories {
+	mavenCentral()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 test {
