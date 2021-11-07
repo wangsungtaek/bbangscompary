@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="common/layout">
+<head>
+    <title>빵스컴퍼니 - 회사소개</title>
+    <link rel="stylesheet" th:href="@{/css/about.css}" />
+</head>
+
+<body>
+    <th:block layout:fragment="content">
+        <main id="main">
+
+            <!-- ======= Breadcrumbs ======= -->
+            <section id="breadcrumbs" class="breadcrumbs">
+                <div class="container">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2>인사말</h2>
+                        <ol>
+                            <li><a href="/bangsCompany/main">메인화면</a></li>
+                            <li>회사소개</li>
+                            <li>인사말</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </section><!-- End Breadcrumbs -->
+
+            <!-- ======= About Section ======= -->
+            <section id="about" class="about">
+                <div class="container">
+
+                    <div class="row content">
+                        <img src="/img/about_content.jpg" alt="회사 소개글">
+                    </div>
+
+                </div>
+            </section><!-- End About Section -->
+
+            <!-- ======= Clients Section ======= -->
+            <section id="clients" class="clients section-bg">
+                <div class="container">
+
+                    <div class="row">
+
+                        <div th:each="collaborate : ${collaborates}" class="col-lg-3 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                            <img th:src="${collaborate}" class="img-fluid" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </section><!-- End Clients Section -->
+
+        </main><!-- End #main -->
+
+    </th:block>
+
+
+    <th:block layout:fragment="js">
+        <script th:src="@{/assets/js/main.js}"></script>
+    </th:block>
+
+</body>
+</html>

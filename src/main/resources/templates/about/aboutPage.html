@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="common/layout">
+<head>
+    <title>온라인 통합 마케팅 NO.1</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+
+<body>
+    <th:block layout:fragment="content">
+        <!-- ======= Hero Section ======= -->
+        <section id="hero">
+            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active" style="background-image: url(/img/yellowBackground_4.jpg">
+                        <div class="carousel-container">
+                            <div class="container">
+                                <h2 class="animate__animated animate__fadeInDown">
+                                    '인플루언서'가 직접 경험한 컨텐츠를 바탕으로<br>
+                                    운영하는 빵스컴퍼니
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+<!--                    <div class="carousel-item" style="background-image: url(/img/yellowBackground_2.jpg)">-->
+<!--                        <div class="carousel-container">-->
+<!--                            <div class="container">-->
+<!--                                <h2 class="animate__animated animate__fadeInDown">-->
+<!--                                    아직도 단순 홍보로만 생각하시나요?-->
+<!--                                </h2>-->
+<!--                                <p class="animate__animated animate__fadeInUp">-->
+<!--                                    내 브랜드, 내 가게 단순 홍보를 뛰어 넘어 [컨텐츠]가 필요한 지금,-->
+<!--                                    컨텐츠와 트렌드를 잘 아는 빵스컴퍼니와 만나 다양한 컨텐츠로 잠재고객을 충성고객으로 만들어보세요.-->
+
+<!--                                </p>-->
+<!--                                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Slide 3 &ndash;&gt;-->
+<!--                    <div class="carousel-item" style="background-image: url(/img/yellowBackground_3.jpg)">-->
+<!--                        <div class="carousel-container">-->
+<!--                            <div class="container">-->
+<!--                                <h2 class="animate__animated animate__fadeInDown">사장님이 몰랐던 사장님 가게의 특별함,</h2>-->
+<!--                                <p class="animate__animated animate__fadeInUp">-->
+<!--                                    모든가 똑같은 홍보마케팅을 할 필요는 없습니다. 특별함만 쏙쏙 골라낸 맞춤 컨설팅으로 내 브랜드,-->
+<!--                                    내 가게에 적합한 홍보를 해드립니다.-->
+<!--                                </p>-->
+<!--                                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Slide 4 &ndash;&gt;-->
+<!--                    <div class="carousel-item" style="background-image: url(/img/yellowBackground_4.jpg)">-->
+<!--                        <div class="carousel-container">-->
+<!--                            <div class="container">-->
+<!--                                <h2 class="animate__animated animate__fadeInDown">1개 리뷰 VS 100개 리뷰 당신의 선택은?</h2>-->
+<!--                                <p class="animate__animated animate__fadeInUp">-->
+<!--                                    소비자는 SNS를 통해 상품을 접하고 구매 전 87%이상의 소비자가 상세리뷰를 통해 구매결정을 합니다.-->
+<!--                                    다양한 리뷰를 통해 소비자의 마음을 움직여보세요.-->
+<!--                                </p>-->
+<!--                                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                </div>
+
+                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
+
+                <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
+
+            </div>
+        </section><!-- End Hero -->
+
+        <main id="main">
+
+            <section id="about" class="about mt-5">
+                <div class="container">
+                    <div class="row content justify-content-center">
+                        <div class="col-lg-6">
+                            <h3>
+                                아직도 <span>단순 홍보로만</span> 생각하시나요?<br>
+                            </h3>
+                            <br>
+                            <p>
+                                내 브랜드, 내 가게 단순 홍보를 뛰어넘어<br>
+                                <span>[컨텐츠]</span>가 필요한 지금,<br>
+                                컨텐츠와 트렌드를 잘 아는 빵스컴퍼니와 만나<br>
+                                다양한 컨텐츠를 잠재고객을 충성고객으로 만들어보세요
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row content justify-content-center" id="about_img">
+                        <div class="col-lg-10">
+                            <img src="/img/main_img_1.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End About Section -->
+
+            <section id="about_2" class="about mt-5">
+                <div class="container">
+                    <div class="row content justify-content-center">
+
+                        <div class="col-lg-6">
+                            <img src="/img/main_img_2.png" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="col-lg-6 content">
+                            <h3>
+                                사장님이 몰랐던<br>
+                                사장님 가게의 특별함,
+                            </h3>
+                            <br>
+                            <p>
+                                모두가 똑같은 홍보미케팅을 할 필요는 없습니다.<br>
+                                특별함만 쏙쏙 골라낸 맞춤 컨설팅으로<br>
+                                내 브랜드, 내 가게에 적합한 홍보를 해드립니다
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End About Section -->
+
+            <section id="portfolio" class="portfolio">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12 d-flex justify-content-center">
+                            <ul id="portfolio-flters">
+                                <li data-filter="*" class="filter-active">전체</li>
+                                <li data-filter=".filter-app">마케팅1</li>
+                                <li data-filter=".filter-card">마케팅2</li>
+                                <li data-filter=".filter-web">마케팅3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row portfolio-container">
+
+                        <div th:each="picture : ${pictures}" class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <div class="portfolio-wrap">
+                                <img th:src="${picture.imgPath}" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4 th:text="${picture.channelName}">채널명</h4>
+                                    <p th:text="${picture.name}">제목명</p>
+                                    <div class="portfolio-links">
+                                        <a th:href="${picture.link}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details">
+                                            <i class="bx bx-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+                <div class="container">
+
+                    <div>
+                        <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="row mt-5">
+
+                        <div class="col-lg-4">
+                            <div class="info">
+                                <div class="address">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h4>위치:</h4>
+                                    <p>경기도 광명시 일직로 72 광명국제무역센터 c동 812호</p>
+                                </div>
+
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>이메일:</h4>
+                                    <p>info@example.com</p>
+                                </div>
+
+                                <div class="phone">
+                                    <i class="bi bi-phone"></i>
+                                    <h4>전화번호:</h4>
+                                    <p>+1 5589 55488 55s</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-8 mt-5 mt-lg-0">
+
+                            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" name="name" class="form-control" id="name" placeholder="이름" required>
+                                    </div>
+                                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="이메일" required>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="제목" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <textarea class="form-control" name="message" rows="5" placeholder="문의내용" required></textarea>
+                                </div>
+                                <div class="my-3">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                                </div>
+                                <div class="text-center"><button type="submit">문의하기</button></div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section><!-- End Contact Section -->
+
+        </main><!-- End #main -->
+    </th:block>
+
+
+    <th:block layout:fragment="js">
+        <script th:src="@{/assets/js/main.js}"></script>
+    </th:block>
+
+</body>
+</html>
