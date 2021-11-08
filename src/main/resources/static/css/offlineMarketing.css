@@ -1,10 +1,10 @@
-#onlineMarketing,
-#onlineMarketing img {
+#offlineMarketing,
+#offlineMarketing img {
     padding: 0px;
     margin: 0px;
 }
 
-#onlineMarketing .container {
+#offlineMarketing .container {
     margin: 0px;
     padding: 0px;
     max-width: 100%;

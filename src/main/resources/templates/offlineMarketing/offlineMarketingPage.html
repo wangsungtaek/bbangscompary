@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="common/layout">
+<head>
+    <title>빵스컴퍼니 - 오프라인마케팅</title>
+    <link rel="stylesheet" th:href="@{/css/offlineMarketing.css}" />
+</head>
+
+<body>
+    <th:block layout:fragment="content">
+        <main id="main">
+
+            <!-- ======= Breadcrumbs ======= -->
+            <section id="breadcrumbs" class="breadcrumbs">
+                <div class="container">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2>오프라인 마케팅</h2>
+                        <ol>
+                            <li><a href="/">메인화면</a></li>
+                            <li>오프라인 마케팅</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </section><!-- End Breadcrumbs -->
+
+            <!-- Offline Marketing Section -->
+            <section id="offlineMarketing">
+                <div class="container">
+                    <div class="row content">
+                        <img src="/img/offlineMarketing/offlineMarketing_0.jpg" alt="오프라인 마케팅 설명">
+                    </div>
+                </div>
+
+                <div class="container" id="content_1">
+                    <div class="row content">
+                        <img src="/img/offlineMarketing/offlineMarketing_1.jpg" alt="옥외광고 설명">
+                    </div>
+                </div>
+
+                <div class="container" id="content_2">
+                    <div class="row content">
+                        <img src="/img/offlineMarketing/offlineMarketing_2.jpg" alt="마케팅 강의 설명">
+                    </div>
+                </div>
+
+
+            </section>
+            <!-- End About Section -->
+
+        </main><!-- End #main -->
+
+    </th:block>
+
+
+    <th:block layout:fragment="js">
+<!--        <script th:src="@{/js/offlineMarketing.js}"></script>-->
+    </th:block>
+
+</body>
+</html>

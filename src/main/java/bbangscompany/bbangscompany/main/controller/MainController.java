@@ -14,12 +14,4 @@ public class MainController {
 
         return "main";
     }
-
-    @GetMapping("mvc")
-    public String mvc(Model model) {
-
-        model.addAttribute("data", "zzzzzzz");
-        return "home";
-    }
-
 }
