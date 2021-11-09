@@ -7,6 +7,7 @@ public class Picture {
     private String channelName;
     private String imgPath;
     private String link;
+    private String division;
 
     public Long getId() {
         return id;
@@ -46,5 +47,13 @@ public class Picture {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
     }
 }
