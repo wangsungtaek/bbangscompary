@@ -116,7 +116,7 @@
 
                     <div class="row portfolio-container">
 
-                        <div th:each="picture : ${pictures}" class="col-lg-4 col-md-6 portfolio-item" th:classappend="${picture.division}">
+                        <div th:each="picture : ${pictures}" class="col-lg-4 col-md-6 col-sm-6 portfolio-item" th:classappend="${picture.division}">
                             <div th:classappend="${picture.division}">
                                 <div class="portfolio-wrap">
                                     <img th:src="${picture.imgPath}" class="img-fluid" alt="">
