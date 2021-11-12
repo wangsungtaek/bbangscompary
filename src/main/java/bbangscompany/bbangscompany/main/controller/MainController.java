@@ -60,7 +60,7 @@ public class MainController {
                 , "/img/blog/키퍼미.JPG"
                 , "/img/instagram/인천국제디자인페어.JPG"
                 , "/img/instagram/인천국제공항사.JPG"
-                , "/img/instagram/어마니머스아티스트.JPG"
+                , "/img/instagram/어나니머스아티스트.JPG"
                 , "/img/instagram/웅진플레이도시.JPG"
                 , "/img/instagram/에이아일랜드.JPG"
                 , "/img/instagram/다봄.JPG"
