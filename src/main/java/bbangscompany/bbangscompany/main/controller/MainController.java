@@ -22,7 +22,7 @@ public class MainController {
     }
 
     @GetMapping("")
-    public String savePicture() {
+    public String savePicture(Model model) {
 
         String[] channelNames = { "블로그", "블로그", "블로그", "블로그", "블로그", "블로그", "블로그", "블로그", "블로그", "블로그",
             "인스타그램", "인스타그램", "인스타그램", "인스타그램", "인스타그램", "인스타그램", "인스타그램", "유튜브", "유튜브"};
@@ -100,7 +100,10 @@ public class MainController {
             picture.setDivision(division[i]);
             mainService.save(picture);
         }
-        return "redirect:/main";
+
+        List<Picture> pictures = mainService.findPictures();
+        model.addAttribute("pictures", pictures);
+        return "main";
     }
 
     @GetMapping("main")
