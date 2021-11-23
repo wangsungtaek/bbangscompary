@@ -10,19 +10,33 @@
 <body>
     <th:block layout:fragment="content">
         <!-- ======= Hero Section ======= -->
-        <section id="hero">
-            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <section id="">
 
-                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+<!--            <div class="container">-->
+                <div class="row">
 
-                <div class="carousel-inner" role="listbox">
+                        <img src="/img/main_slides_2.jpg">
 
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active" style="background-image: url(/img/main_slides_2.jpg)">
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-item" style="background-image: url(/img/main_slides_1.jpg)">
-                    </div>
+                </div>
+<!--            </div>-->
+
+        </section>
+
+
+
+<!--        <section id="hero">-->
+<!--            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">-->
+
+<!--                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>-->
+
+<!--                <div class="carousel-inner" role="listbox">-->
+
+<!--                    &lt;!&ndash; Slide 1 &ndash;&gt;-->
+<!--                    <div class="carousel-item active" style="background-image: url(/img/main_slides_2.jpg)">-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Slide 2 &ndash;&gt;-->
+<!--                    <div class="carousel-item" style="background-image: url(/img/main_slides_1.jpg)">-->
+<!--                    </div>-->
 
 <!--                    &lt;!&ndash; Slide 2 &ndash;&gt;-->
 <!--                    <div class="carousel-item" style="background-image: url(/img/main_slides_2.jpg)">-->
@@ -35,22 +49,22 @@
 <!--                        </div>-->
 <!--                    </div>-->
 
-                </div>
+<!--                </div>-->
 
-                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-                </a>
+<!--                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">-->
+<!--                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>-->
+<!--                </a>-->
 
-                <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-                </a>
+<!--                <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">-->
+<!--                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>-->
+<!--                </a>-->
 
-            </div>
-        </section><!-- End Hero -->
+<!--            </div>-->
+<!--        </section>&lt;!&ndash; End Hero &ndash;&gt;-->
 
         <main id="main">
 
-            <section id="about" class="about mt-5">
+            <section id="about" class="about">
                 <div class="container">
                     <div class="row content justify-content-center">
                         <div class="col-lg-6">
@@ -62,7 +76,8 @@
                                 내 브랜드, 내 가게 단순 홍보를 뛰어넘어<br>
                                 <span>[컨텐츠]</span>가 필요한 지금,<br>
                                 컨텐츠와 트렌드를 잘 아는 빵스컴퍼니와 만나<br>
-                                다양한 컨텐츠를 잠재고객을 충성고객으로 만들어보세요
+                                다양한 컨텐츠를 잠재고객을 충성고객으로<br>
+                                만들어보세요
                             </p>
                         </div>
                     </div>
@@ -77,20 +92,21 @@
 
             <section id="about_2" class="about mt-5">
                 <div class="container">
-                    <div class="row content justify-content-center">
+                    <div class="row content justify-content-center align-items-center">
 
-                        <div class="col-lg-6">
+                        <div class="col-12 col-lg-6">
                             <img src="/img/main_img_2.png" class="img-fluid" alt="">
                         </div>
 
-                        <div class="col-lg-6 content">
-                            <h3>
+                        <div class="col-12 col-lg-6">
+                            <h3 style="margin-left:60px;">
                                 사장님이 몰랐던<br>
                                 사장님 가게의 특별함,
                             </h3>
                             <br>
-                            <p>
-                                모두가 똑같은 홍보미케팅을 할 필요는 없습니다.<br>
+                            <p style="margin-left:60px;">
+                                모두가 똑같은 홍보마케팅을<br>
+                                할 필요는 없습니다.<br><br>
                                 특별함만 쏙쏙 골라낸 맞춤 컨설팅으로<br>
                                 내 브랜드, 내 가게에 적합한 홍보를 해드립니다
                             </p>
@@ -116,7 +132,7 @@
                     <div class="row portfolio-container">
 
 
-                        <div th:each="picture : ${pictures}" class="col-lg-4 col-md-6 col-sm-6 portfolio-item" th:classappend="${picture.division}">
+                        <div th:each="picture : ${pictures}" class="col-lg-4 col-md-6 col-sm-6 col-4 portfolio-item" th:classappend="${picture.division}">
 
                             <div th:classappend="${picture.division}">
                                 <div class="portfolio-wrap">

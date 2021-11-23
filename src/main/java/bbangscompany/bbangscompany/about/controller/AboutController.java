@@ -46,6 +46,9 @@ public class AboutController {
         imgPaths.add("/img/collaborate/collaborate_23.png");
         imgPaths.add("/img/collaborate/collaborate_24.png");
         imgPaths.add("/img/collaborate/collaborate_25.png");
+        imgPaths.add("/img/collaborate/falco.png");
+        imgPaths.add("/img/collaborate/abc.png");
+        imgPaths.add("/img/collaborate/동아.png");
 
         // 파일 읽어오기
 //        File rw = new File("/img/collaborate");
