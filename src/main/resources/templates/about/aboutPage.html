@@ -5,6 +5,14 @@
 <head>
     <title>빵스컴퍼니 - 회사소개</title>
     <link rel="stylesheet" th:href="@{/css/about.css}" />
+
+    <style>
+        @media (max-width: 768px) {
+            #clients img {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -50,6 +58,7 @@
 
                         <div th:each="collaborate : ${collaborates}" class="col-lg-3 col-md-3 col-sm-3 col-3 d-flex align-items-center justify-content-center">
                             <img th:src="${collaborate}" class="img-fluid" alt="">
+
                         </div>
 
                     </div>
