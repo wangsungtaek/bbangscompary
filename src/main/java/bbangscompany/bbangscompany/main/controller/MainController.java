@@ -1,11 +1,15 @@
 package bbangscompany.bbangscompany.main.controller;
 
 import bbangscompany.bbangscompany.main.domain.Picture;
+import bbangscompany.bbangscompany.main.entity.ContactUs;
 import bbangscompany.bbangscompany.main.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -120,5 +124,16 @@ public class MainController {
             System.out.println(picture.getName());
         }
         return "main";
+    }
+
+    @PostMapping("contactUs")
+    public String contactUs(
+            @RequestBody String contactUs
+    ) {
+        System.out.println("=====");
+        System.out.println(contactUs);
+        System.out.println("=====");
+
+        return "success";
     }
 }
