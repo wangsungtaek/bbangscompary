@@ -2,15 +2,13 @@ package bbangscompany.bbangscompany.main.controller;
 
 import bbangscompany.bbangscompany.main.domain.Picture;
 import bbangscompany.bbangscompany.main.entity.ContactUs;
+import bbangscompany.bbangscompany.main.service.ContactUsService;
 import bbangscompany.bbangscompany.main.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +17,9 @@ import java.util.List;
 public class MainController {
 
     private final MainService mainService;
+
+    @Autowired
+    private ContactUsService contactUsService;
 
     @Autowired
     public MainController(MainService mainService) {
@@ -107,33 +108,18 @@ public class MainController {
 
         List<Picture> pictures = mainService.findPictures();
         model.addAttribute("pictures", pictures);
-        return "main";
-    }
-
-    @GetMapping("main")
-    public String mainPage(Model model) {
-
-        List<Picture> pictures = mainService.findPictures();
-        System.out.println(pictures.size());
-        for( Picture p : pictures) {
-            System.out.println(p.getName());
-        }
-
-        model.addAttribute("pictures", pictures);
-        for(Picture picture : pictures) {
-            System.out.println(picture.getName());
-        }
+        Object contactUs = model.getAttribute("contactUs");
+        System.out.println("contactUs = " + contactUs);
         return "main";
     }
 
     @PostMapping("contactUs")
-    public String contactUs(
-            @RequestBody String contactUs
-    ) {
-        System.out.println("=====");
-        System.out.println(contactUs);
-        System.out.println("=====");
+    @ResponseBody
+    public ContactUs contactUs(ContactUs contactUs, Model model) {
 
-        return "success";
+        contactUsService.contactUs(contactUs);
+        model.addAttribute("contactUs", "Y");
+
+        return contactUs;
     }
 }

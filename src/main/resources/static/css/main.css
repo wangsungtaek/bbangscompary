@@ -35,3 +35,12 @@
     font-size: 20px;
 }
 
+#btn_contactUs {
+    background: #d9232d;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin-top: 20px;
+}

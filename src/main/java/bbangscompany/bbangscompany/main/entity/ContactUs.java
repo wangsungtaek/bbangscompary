@@ -1,19 +1,10 @@
 package bbangscompany.bbangscompany.main.entity;
 
-import org.springframework.lang.NonNull;
-
 public class ContactUs {
 
-    @NonNull
     private String name;
-
-    @NonNull
     private String email;
-
-    @NonNull
     private String subject;
-
-    @NonNull
     private String message;
 
     public String getName() {

@@ -5,7 +5,10 @@ $("#btn_contactUs").click(function(){
     let subject = $("#subject").val();
     let message = $("#message").val();
 
-    console.log(name);
+    if(name == "" || email == "" || subject == ""){
+        alert("이름, 이메일, 제목을 입력해주세요.");
+        return;
+    }
 
     $.ajax({
         url: "/contactUs",
@@ -19,7 +22,11 @@ $("#btn_contactUs").click(function(){
         dataType: "json",
         contentType : "application/x-www-form-urlencoded; charset=UTF-8",
         success: function(result) {
-            console.log("완료");
+            $("#name").val("");
+            $("#email").val("");
+            $("#subject").val("");
+            $("#message").val("");
+            alert("문의가 완료되었습니다.");
         },
         error: function() {
             console.log("에러");
