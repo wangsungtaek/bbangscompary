@@ -14,8 +14,6 @@ public class ContactUsService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    private static final String FROM_ADDRESS = "tjdxorv@naver.com";
-
     public void contactUs(ContactUs contactUs) {
         String content = "";
 

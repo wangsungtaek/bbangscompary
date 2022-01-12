@@ -2,18 +2,16 @@ package bbangscompany.bbangscompany.main.service;
 
 import bbangscompany.bbangscompany.main.domain.Picture;
 import bbangscompany.bbangscompany.main.repository.MainRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class MainService {
 
     private final MainRepository mainRepository;
-
-    public MainService(MainRepository mainRepository) {
-        this.mainRepository = mainRepository;
-    }
 
     /*
      * 사진 저장
