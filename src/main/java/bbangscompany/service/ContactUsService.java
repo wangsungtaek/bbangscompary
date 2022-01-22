@@ -1,6 +1,6 @@
-package bbangscompany.bbangscompany.main.service;
+package bbangscompany.service;
 
-import bbangscompany.bbangscompany.main.entity.ContactUs;
+import bbangscompany.domain.ContactUs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;

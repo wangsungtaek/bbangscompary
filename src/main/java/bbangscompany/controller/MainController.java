@@ -1,14 +1,12 @@
-package bbangscompany.bbangscompany.main.controller;
+package bbangscompany.controller;
 
-import bbangscompany.bbangscompany.main.domain.Picture;
-import bbangscompany.bbangscompany.main.entity.ContactUs;
-import bbangscompany.bbangscompany.main.service.ContactUsService;
-import bbangscompany.bbangscompany.main.service.MainService;
+import bbangscompany.domain.Picture;
+import bbangscompany.domain.ContactUs;
+import bbangscompany.service.ContactUsService;
+import bbangscompany.service.MainService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

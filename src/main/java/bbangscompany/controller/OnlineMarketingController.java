@@ -1,4 +1,4 @@
-package bbangscompany.bbangscompany.onlineMarketing.controller;
+package bbangscompany.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="common/layout">
+<head>
+    <title>빵스컴퍼니 - 로그인</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+</head>
+
+<body>
+    <th:block layout:fragment="content">
+        <main id="main">
+
+            <!-- Login -->
+            <section id="offlineMarketing">
+                <h1>Login</h1> <hr>
+                <img src="/img/info.jpeg" />
+
+                <form action="/login" method="POST">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    email : <input type="text" name="username"> <br>
+                    password : <input type="password" name="password"> <br>
+                    <button type="submit">Login</button>
+                </form> <br>
+
+                <a href="/signup">Go to join! →</a>
+
+            </section>
+            <!-- End About Section -->
+
+        </main><!-- End #main -->
+
+    </th:block>
+
+
+    <th:block layout:fragment="js">
+<!--        <script th:src="@{/js/offlineMarketing.js}"></script>-->
+    </th:block>
+
+</body>
+</html>

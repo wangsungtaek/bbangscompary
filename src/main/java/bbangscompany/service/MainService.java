@@ -1,7 +1,7 @@
-package bbangscompany.bbangscompany.main.service;
+package bbangscompany.service;
 
-import bbangscompany.bbangscompany.main.domain.Picture;
-import bbangscompany.bbangscompany.main.repository.MainRepository;
+import bbangscompany.domain.Picture;
+import bbangscompany.repository.MainRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,5 @@
-package bbangscompany.bbangscompany.main.domain;
+package bbangscompany.domain;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

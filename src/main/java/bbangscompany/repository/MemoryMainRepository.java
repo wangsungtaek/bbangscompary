@@ -1,6 +1,6 @@
-package bbangscompany.bbangscompany.main.repository;
+package bbangscompany.repository;
 
-import bbangscompany.bbangscompany.main.domain.Picture;
+import bbangscompany.domain.Picture;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

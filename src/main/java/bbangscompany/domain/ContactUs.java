@@ -1,4 +1,4 @@
-package bbangscompany.bbangscompany.main.entity;
+package bbangscompany.domain;
 
 public class ContactUs {
 
