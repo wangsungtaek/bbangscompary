@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 public class User {
 
     @Id @GeneratedValue
+    @Column(name = "u_id")
     private Long id;
 
     @Column(name = "user_id", length = 20, nullable = false)
@@ -22,6 +23,8 @@ public class User {
 
     @Enumerated(value = EnumType.STRING)
     private UserType userType;
+
+    private LocalDateTime createDate;
 
     public User() {
     }

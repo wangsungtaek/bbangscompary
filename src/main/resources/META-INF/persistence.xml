@@ -5,6 +5,7 @@
 
     <persistence-unit name="hello">
         <class>bbangscompany.domain.User</class>
+        <class>bbangscompany.domain.Image</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>

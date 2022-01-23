@@ -1,7 +1,6 @@
 package bbangscompany;
 
-import bbangscompany.domain.User;
-import bbangscompany.domain.UserType;
+import bbangscompany.domain.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,13 +18,17 @@ public class JpaApp {
         tx.begin();
 
         try {
-
             User user = new User();
-            user.setUid("ab");
-            user.setUpw("1234!!");
-            user.setUserType(UserType.USER);
-
+            user.setUid("aaaa");
+            user.setUpw("see111");
+            user.setUserType(UserType.ADMIN);
             em.persist(user);
+
+            Image image = new Image();
+            image.setUser(user);
+            image.setChannelName(ChannelName.블로그);
+            image.setDivision(Division.blog);
+            em.persist(image);
 
             tx.commit();
         } catch (Exception e) {
