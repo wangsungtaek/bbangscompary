@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="common/admin_layout">
+<head>
+    <title>ADMIN</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+</head>
+
+<body>
+<th:block layout:fragment="content">
+<main id="main">
+    <h2>admin</h2>
+
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <h2>admin page testTest</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+</main>
+
+</th:block>
+<th:block layout:fragment="js" />
+
+</body>
+</html>

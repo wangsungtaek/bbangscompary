@@ -6,16 +6,19 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+import static javax.persistence.FetchType.*;
+
 @Getter
 @Setter
 @Entity
 public class Image {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue
+    @Column(name = "image_id")
     private Long id;
 
     private String title;
-
     private String imgPath;
     private String link;
 
@@ -25,13 +28,9 @@ public class Image {
     @Enumerated(EnumType.STRING)
     private Division division;
 
-    @ManyToOne
-    @JoinColumn(name = "u_id")
-    private User user;
+//    @ManyToOne(fetch = LAZY)
+//    @JoinColumn(name = "u_id")
+//    private User user;
 
     private LocalDateTime createDate;
-
-    public Image() {
-
-    }
 }

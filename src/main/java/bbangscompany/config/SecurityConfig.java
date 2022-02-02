@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN") // admin 하위 페이지 admin만 허용
+                //.antMatchers("/admin/**").hasRole("ADMIN") // admin 하위 페이지 admin만 허용
                 .antMatchers("/**").permitAll() // 모든 페이지 누구나 접근 허용
 
            .and()

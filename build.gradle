@@ -28,32 +28,39 @@ repositories {
 }
 
 dependencies {
-	// security 추가
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	// Security
+	implementation 'org.springframework.security:spring-security-config'
+	implementation 'org.springframework.security:spring-security-core'
+	implementation 'org.springframework.security:spring-security-web'
 
+	// Thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
+	// JPA
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.mariadb.jdbc:mariadb-java-client'
+
+	// WEB
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	// mail
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	runtimeOnly "org.springframework.boot:spring-boot-devtools"
 
 	//lombok 라이브러리 추가 시작
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
-	//lombok 라이브러리 추가 끝
 
-	implementation 'org.springframework.boot:spring-boot-starter-mail'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//JUnit4 추가
+	testImplementation("org.junit.vintage:junit-vintage-engine") {
+		exclude group: "org.hamcrest", module: "hamcrest-core"
+	}
 
-	// Maria 데이터베이스
-	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.3'
-	// JPA 하이버네이트
-	implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.10.Final'
 }
 
 test {

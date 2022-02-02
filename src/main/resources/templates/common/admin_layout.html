@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">빵스컴퍼니</title>
+    <meta name="description" content="온라인 통합 마케팅, 빵스컴퍼니 홈페이지">
+
+    <!-- 공통 css, js, meta tag -->
+    <th:block th:replace="common/admin_head"></th:block>
+    <!-- page css -->
+    <th:block layout:fragment="css"></th:block>
+
+</head>
+
+<body>
+<!-- 공통 header -->
+<header th:replace="common/header :: header"></header>
+<!-- page content body 구성 -->
+<th:block layout:fragment="content"></th:block>
+<!-- 공통 footer -->
+<footer th:replace="common/footer :: footer"></footer>
+<!-- 공통 javascript -->
+<th:block th:replace="common/admin_js"></th:block>
+<th:block layout:fragment="js"></th:block>
+</body>
+</html>
