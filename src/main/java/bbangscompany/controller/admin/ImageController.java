@@ -2,6 +2,8 @@ package bbangscompany.controller.admin;
 
 import bbangscompany.domain.ChannelName;
 import bbangscompany.domain.Division;
+import bbangscompany.domain.Image;
+import bbangscompany.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,8 @@ import java.io.IOException;
 @RequiredArgsConstructor
 @Slf4j
 public class ImageController {
+
+    private final ImageService imageService;
 
     @GetMapping("/images/new")
     public String createImageForm(Model model) {
@@ -50,14 +54,13 @@ public class ImageController {
         File dest = new File(filePath);
         file.transferTo(dest); // 파일 업로드
 
-        String title = form.getTitle();
-        System.out.println("title = " + title);
+        Image image = new Image();
+        image.setTitle(form.getTitle());
+        image.setLink(form.getLink());
+        image.setImgPath(filePath);
 
-        String link = form.getLink();
-        System.out.println("link = " + link);
+        imageService.imgSave(image);
 
-        System.out.println("file = " + file);
-
-        return "redirect:/admin";
+        return "redirect:/images/new";
     }
 }
