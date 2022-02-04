@@ -4,8 +4,10 @@ import bbangscompany.domain.ChannelName;
 import bbangscompany.domain.Division;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Getter @Setter
 public class ImageForm {
@@ -16,4 +18,5 @@ public class ImageForm {
     private String link;
     private ChannelName channelName;
     private Division division;
+    private MultipartFile file;
 }
