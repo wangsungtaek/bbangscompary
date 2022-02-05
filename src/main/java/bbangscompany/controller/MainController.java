@@ -1,8 +1,10 @@
 package bbangscompany.controller;
 
+import bbangscompany.domain.Image;
 import bbangscompany.domain.Picture;
 import bbangscompany.domain.ContactUs;
 import bbangscompany.service.ContactUsService;
+import bbangscompany.service.ImageService;
 import bbangscompany.service.MainService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,7 @@ public class MainController {
 
     private final MainService mainService;
     private final ContactUsService contactUsService;
+    private final ImageService imageService;
 
     @GetMapping("")
     public String savePicture(Model model) {
@@ -89,7 +92,8 @@ public class MainController {
         pictures.add(new Picture(57L, "경기도주식회사", "유튜브", "/img/youtube/경기도주식회사.JPG", "https://www.youtube.com/watch?v=J-vnifYfyOE", "filter-youtube"));
         pictures.add(new Picture(58L, "LOTTE", "유튜브", "/img/youtube/LOTTE.JPG", "https://www.youtube.com/watch?v=G_3T6Atrhlw", "filter-youtube"));
 
-
+        List<Image> images = imageService.findImages();
+        model.addAttribute("images", images);
         model.addAttribute("pictures", pictures);
         Object contactUs = model.getAttribute("contactUs");
         System.out.println("contactUs = " + contactUs);

@@ -122,16 +122,34 @@
                     <div class="row portfolio-container">
 
 
-                        <div th:each="picture : ${pictures}" class="col-lg-4 col-md-6 col-sm-6 col-4 portfolio-item" th:classappend="${picture.division}">
+<!--                        <div th:each="picture : ${pictures}" class="col-lg-4 col-md-6 col-sm-6 col-4 portfolio-item" th:classappend="${picture.division}">-->
 
-                            <div th:classappend="${picture.division}">
+<!--                            <div th:classappend="${picture.division}">-->
+<!--                                <div class="portfolio-wrap">-->
+<!--                                    <img th:src="${picture.imgPath}" class="img-fluid" alt="">-->
+<!--                                    <div class="portfolio-info">-->
+<!--                                        <h4 th:text="${picture.channelName}">채널명</h4>-->
+<!--                                        <p th:text="${picture.name}">제목명</p>-->
+<!--                                        <div class="portfolio-links">-->
+<!--                                            <a th:href="${picture.link}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details">-->
+<!--                                                <i class="bx bx-link"></i>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                        <div th:each="image : ${images}" class="col-lg-4 col-md-6 col-sm-6 col-4 portfolio-item" th:classappend="${image.division}">
+
+                            <div th:classappend="${image.division}">
                                 <div class="portfolio-wrap">
-                                    <img th:src="${picture.imgPath}" class="img-fluid" alt="">
+                                    <img th:src="${image.imgPath}" class="img-fluid" alt="">
                                     <div class="portfolio-info">
-                                        <h4 th:text="${picture.channelName}">채널명</h4>
-                                        <p th:text="${picture.name}">제목명</p>
+                                        <h4 th:text="${image.channelName}">채널명</h4>
+                                        <p th:text="${image.title}">제목명</p>
                                         <div class="portfolio-links">
-                                            <a th:href="${picture.link}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details">
+                                            <a th:href="${image.link}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details">
                                                 <i class="bx bx-link"></i>
                                             </a>
                                         </div>
@@ -139,7 +157,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                     </div>
                 </div>
