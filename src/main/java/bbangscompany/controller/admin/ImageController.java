@@ -17,6 +17,8 @@ import javax.swing.filechooser.FileSystemView;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -57,10 +59,30 @@ public class ImageController {
         Image image = new Image();
         image.setTitle(form.getTitle());
         image.setLink(form.getLink());
+        image.setChannelName(form.getChannelName());
         image.setImgPath(filePath);
+        image.setCreateDate(LocalDateTime.now());
+
+        if (image.getChannelName() == ChannelName.블로그) {
+            image.setDivision(Division.blog);
+        } else if (image.getChannelName() == ChannelName.유튜브) {
+            image.setDivision(Division.youtube);
+        } else if (image.getChannelName() == ChannelName.인스타그램) {
+            image.setDivision(Division.instagram);
+        }
 
         imageService.imgSave(image);
 
         return "redirect:/images/new";
     }
+
+    @GetMapping("/images")
+    public String imageList(Model model) {
+        List<Image> images = imageService.findImages();
+        model.addAttribute("images", images);
+
+        return "admin/imageList";
+    }
+
+
 }

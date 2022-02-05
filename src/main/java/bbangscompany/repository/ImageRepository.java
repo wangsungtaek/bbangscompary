@@ -22,12 +22,12 @@ public class ImageRepository {
     }
 
     public List<Image> findAll() {
-        return em.createQuery("select i from image i", Image.class)
+        return em.createQuery("select i from Image i", Image.class)
                 .getResultList();
     }
 
     public List<Image> findTitle(String title) {
-        return em.createQuery("select i from image i where i.title = :title", Image.class)
+        return em.createQuery("select i from Image i where i.title = :title", Image.class)
                 .setParameter("title", title)
                 .getResultList();
     }

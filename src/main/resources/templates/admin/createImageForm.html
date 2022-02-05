@@ -3,7 +3,18 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="common/admin_layout">
 <head>
     <title>ADMIN</title>
-    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+    <th:block layout:fragment="css">
+        <style>
+        #file {
+            height: 44px;
+            padding-left: 7px;
+        }
+
+        #btnSubmit {
+            float: right;
+        }
+        </style>
+    </th:block>
 </head>
 
 <body id="page-top">
@@ -46,12 +57,8 @@
 
                                         <div class="form-group">
                                             <label th:for="title">이미지명</label>
-                                            <input type="text" th:field="*{title}" class="form-control" placeholder="이미지명을 입력하세요"
-                                                   th:class="${#fields.hasErrors('title')}? 'form-control fieldError' : 'form-control'">
+                                            <input type="text" th:field="*{title}" class="form-control" placeholder="이미지명을 입력하세요">
 
-                                            <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">
-                                                Incorrect date
-                                            </p>
                                         </div>
 
                                         <div class="form-group">
@@ -60,13 +67,12 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label th:for="channelName">채널 이름</label>
-                                            <input type="text" th:field="*{channelName}" class="form-control" placeholder="채널 이름을 입력하세요.">
-                                        </div>
+                                            <label th:for="channelName">분류</label>
+                                            <select name="channelName" class="form-control">
+                                                <option th:each="ch : ${T(bbangscompany.domain.ChannelName).values()}"
+                                                        th:value="${ch}" th:text="${ch}"></option>
+                                            </select>
 
-                                        <div class="form-group">
-                                            <label th:for="division">분류</label>
-                                            <input type="text" th:field="*{division}" class="form-control">
                                         </div>
 
                                         <div class="form-group">
@@ -74,7 +80,7 @@
                                             <input type="file" th:field="*{file}" class="form-control" accept="image/jpeg" required/>
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="button" class="btn btn-primary" id="btnSubmit">
                                             이미지 등록
                                         </button>
                                     </form>
@@ -108,7 +114,52 @@
     <!-- End of Page Wrapper -->
 
 </th:block>
-<th:block layout:fragment="js"/>
+<th:block layout:fragment="js">
+<script>
+
+    <!--  Submit -->
+    $("#btnSubmit").on("click", function() {
+
+        let title = $("#title").val().trim();
+        let link = $("#link").val().trim();
+        let file = $("#file").val();
+
+        if(!title) {
+            alert("이미지명을 입력해 주세요.");
+            $("#title").focus();
+            return;
+        }
+        if(!link) {
+            alert("링크를 입력해 주세요.");
+            $("#link").focus();
+            return;
+        }
+        if(!file) {
+            alert("파일을 선택해 주세요.");
+            return;
+        }
+
+        $("form").submit();
+    });
+
+
+    <!--  첨부 파일 용량 확인 -->
+    $("#file").off().on("change", function() {
+        if (this.files && this.files[0]) {
+
+            var maxSize = 5 * 1024 * 1024;
+            var fileSize = this.files[0].size;
+
+            if(fileSize > maxSize){
+                alert("첨부파일 사이즈는 5MB 이내로 등록 가능합니다.");
+                $(this).val('');
+                return false;
+            }
+	    }
+    });
+</script>
+</th:block>
+
 
 </body>
 </html>

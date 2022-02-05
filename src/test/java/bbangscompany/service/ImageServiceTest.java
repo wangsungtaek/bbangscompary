@@ -13,6 +13,9 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
@@ -43,18 +46,29 @@ class ImageServiceTest {
      }
 
     @Test
-    @Rollback(value = false)
+    @Rollback(value = true)
     public void 이미지_조회() throws Exception {
         // given
         Image image = new Image();
-        image.setTitle("2번 이미지");
+        image.setTitle("테스트 이미지");
 
         // when
         Long saveId = imageService.imgSave(image);
 
         // then
-        Image findImg = imageRepository.findOne(1L);
-        Assertions.assertThat(saveId).isEqualTo(findImg.getId());
+        List<Image> findImg = imageRepository.findTitle("테스트 이미지");
+        assertThat(saveId).isEqualTo(findImg.get(0).getId());
     }
+
+    @Test
+    public void 이미지_전체_조회() throws Exception {
+        // given
+
+        // when
+        List<Image> images = imageService.findImages();
+
+        // then
+        assertThat(images).isEqualTo(images);
+     }
 
 }
