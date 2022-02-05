@@ -19,7 +19,7 @@ public class Image {
     private Long id;
 
     private String title;
-    private String imgPath;
+    private String imgName;
     private String link;
 
     @Enumerated(EnumType.STRING)

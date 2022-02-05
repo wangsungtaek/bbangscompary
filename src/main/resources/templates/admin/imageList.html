@@ -40,7 +40,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="imageTable" width="100%" cellspacing="0">
                                     <thead>
                                     <tr>
                                         <th>#</th>
@@ -53,29 +53,78 @@
                                     </thead>
                                     <tbody>
                                     <tr th:each="image : ${images}">
-                                        <td th:text="${image.id}"></td>
-                                        <td th:text="${image.title}"></td>
-                                        <td th:text="${image.channelName}"></td>
-                                        <td th:text="${image.link}"></td>
-                                        <td th:text="${image.createDate}"></td>
-                                        <td th:text="${image.imgPath}"></td>
+                                        <td class="id" th:text="${image.id}"></td>
+                                        <td class="title" th:text="${image.title}"></td>
+                                        <td class="channelName" th:text="${image.channelName}"></td>
+                                        <td class="link" th:text="${image.link}"></td>
+                                        <td class="createDate" th:text="${image.createDate}"></td>
+                                        <td class="imgName" th:text="${image.imgName}"></td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
             </div>
             <!-- End of Main Content -->
 
+            <!-- 이미지 수정, 삭제 모달창-->
+            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form role="form" th:object="${imageForm}" method="post" id="imgForm">
+
+                                <div class="form-group">
+                                    <input type="text" id="id" class="form-control" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" th:field="*{title}" class="form-control" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <select th:field="*{channelName}" class="form-control" id="channelName">
+                                        <option th:each="ch : ${T(bbangscompany.domain.ChannelName).values()}"
+                                                th:value="${ch}" th:text="${ch}"></option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" th:field="*{link}" class="form-control" placeholder="링크를 입력하세요.">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" th:field="*{imgName}" class="form-control" readonly>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">닫기</button>
+                            <button class="btn btn-primary" type="button" id="btnUpdate">수정</button>
+                            <button class="btn btn-danger" type="button" id="btnDelete">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; bbangscompany</span>
                     </div>
                 </div>
             </footer>
@@ -94,7 +143,7 @@
     <script th:src="@{/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
 
     <!-- Page level custom scripts -->
-    <script th:src="@{/js/demo/datatables-demo.js}"></script>
+    <script th:src="@{/js/admin/imageList.js}"></script>
 
 </th:block>
 

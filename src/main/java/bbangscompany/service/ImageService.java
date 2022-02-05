@@ -1,5 +1,7 @@
 package bbangscompany.service;
 
+import bbangscompany.domain.ChannelName;
+import bbangscompany.domain.Division;
 import bbangscompany.domain.Image;
 import bbangscompany.repository.ImageRepository;
 import lombok.RequiredArgsConstructor;
@@ -38,4 +40,29 @@ public class ImageService {
         return imageRepository.findOne(imageId);
     }
 
+    /**
+     * 이미지 수정
+     */
+    @Transactional
+    public void updateImg(Long id, ChannelName channelName, String link) {
+        Image image = imageRepository.findOne(id);
+        image.setChannelName(channelName);
+        image.setLink(link);
+
+        if (channelName == ChannelName.블로그) {
+            image.setDivision(Division.blog);
+        } else if (channelName == ChannelName.인스타그램) {
+            image.setDivision(Division.instagram);
+        } else if (channelName == ChannelName.유튜브) {
+            image.setDivision(Division.youtube);
+        }
+    }
+
+    /**
+     * 이미지 삭제
+     */
+    @Transactional
+    public void deleteImg(Long id) {
+        imageRepository.delete(id);
+    }
 }

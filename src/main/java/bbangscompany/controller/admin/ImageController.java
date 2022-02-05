@@ -6,10 +6,12 @@ import bbangscompany.domain.Image;
 import bbangscompany.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,6 +29,23 @@ public class ImageController {
 
     private final ImageService imageService;
 
+    @Value("${file.upload.path}")
+    private String imageBasePath;
+
+    /**
+     * 이미지 조회 화면
+     */
+    @GetMapping("/images")
+    public String imageList(Model model) {
+        List<Image> images = imageService.findImages();
+        model.addAttribute("images", images);
+        model.addAttribute("imageForm", new ImageForm());
+        return "admin/imageList";
+    }
+
+    /**
+     * 이미지 등록 화면
+     */
     @GetMapping("/images/new")
     public String createImageForm(Model model) {
         model.addAttribute("imageForm", new ImageForm());
@@ -34,6 +53,9 @@ public class ImageController {
         return "admin/createImageForm";
     }
 
+    /**
+     * 이미지 등록
+     */
     @PostMapping("/images/new")
     public String createImage(@Valid ImageForm form, BindingResult result) throws IOException {
 
@@ -44,15 +66,12 @@ public class ImageController {
         }
         MultipartFile file = form.getFile();
 
-        String rootPath = FileSystemView.getFileSystemView().getHomeDirectory().toString();
-        String basePath = rootPath + "/" + "images";
-
-        File imagePath = new File(basePath);
+        File imagePath = new File(imageBasePath);
         if( !imagePath.exists()) {
             imagePath.mkdir();
         }
 
-        String filePath = basePath + "/" + file.getOriginalFilename();
+        String filePath = imageBasePath + "/" + file.getOriginalFilename();
         File dest = new File(filePath);
         file.transferTo(dest); // 파일 업로드
 
@@ -60,7 +79,7 @@ public class ImageController {
         image.setTitle(form.getTitle());
         image.setLink(form.getLink());
         image.setChannelName(form.getChannelName());
-        image.setImgPath(filePath);
+        image.setImgName(file.getOriginalFilename());
         image.setCreateDate(LocalDateTime.now());
 
         if (image.getChannelName() == ChannelName.블로그) {
@@ -76,13 +95,38 @@ public class ImageController {
         return "redirect:/images/new";
     }
 
-    @GetMapping("/images")
-    public String imageList(Model model) {
-        List<Image> images = imageService.findImages();
-        model.addAttribute("images", images);
 
-        return "admin/imageList";
+    /**
+     * 이미지 수정
+     */
+    @PostMapping("/images/{imageId}/edit")
+    public String editImage(
+            @PathVariable("imageId") Long imageId,
+            @Valid ImageForm form)
+    {
+
+        imageService.updateImg(imageId, form.getChannelName(), form.getLink());
+
+        return "redirect:/images";
     }
 
+    /**
+     * 이미지 삭제
+     */
+    @PostMapping("/images/{imageId}/delete")
+    public String deleteImage(
+            @PathVariable("imageId") Long imageId,
+            @Valid ImageForm form)
+    {
+
+        imageService.deleteImg(imageId);
+
+        String imgPath = imageBasePath + "/" + form.getImgName();
+
+        File file = new File(imgPath);
+        file.delete();
+
+        return "redirect:/images";
+    }
 
 }

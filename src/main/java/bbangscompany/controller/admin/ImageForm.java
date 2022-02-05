@@ -20,4 +20,6 @@ public class ImageForm {
     private ChannelName channelName;
 
     private MultipartFile file;
+
+    private String imgName;
 }

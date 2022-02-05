@@ -31,4 +31,11 @@ public class ImageRepository {
                 .setParameter("title", title)
                 .getResultList();
     }
+
+    public void delete(Long id) {
+        Image image = findOne(id);
+        em.remove(image);
+    }
+
+
 }
