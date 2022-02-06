@@ -4,6 +4,7 @@ import bbangscompany.domain.ChannelName;
 import bbangscompany.domain.Division;
 import bbangscompany.domain.Image;
 import bbangscompany.service.ImageService;
+import jdk.internal.net.http.common.Log;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -72,6 +73,9 @@ public class ImageController {
         }
 
         String filePath = imageBasePath + "/" + file.getOriginalFilename();
+
+        log.info("imageBasePath : " + imageBasePath);
+        log.info("filePath : " + filePath);
         File dest = new File(filePath);
         file.transferTo(dest); // 파일 업로드
 

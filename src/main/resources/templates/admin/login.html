@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="common/admin_layout">
+<head>
+    <title>ADMIN</title>
+    <th:block layout:fragment="css"></th:block>
+</head>
+
+<body id="bg-gradient-primary">
+<th:block layout:fragment="content">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block" style="background: url(/img/bbangs.png);
+                                background-position: center; background-size: 300px;
+                                background-repeat: no-repeat;"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">관리자 페이지 로그인</h1>
+                                    </div>
+
+                                    <form class="user" method="post">
+
+                                        <div class="form-group">
+                                            <input class="form-control form-control-user" id="id" name="id"
+                                                   placeholder="아이디를 입력하세요.">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control form-control-user" id="password" name="password"
+                                                   placeholder="비밀번호를 입력하세요.">
+                                        </div>
+                                        <button class="btn btn-warning btn-user btn-block">
+                                            Login
+                                        </button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</th:block>
+<th:block layout:fragment="js"/>
+
+</body>
+</html>

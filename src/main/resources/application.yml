@@ -32,4 +32,4 @@ logging:
 
 file:
   upload:
-    path: /images
+    path: /gun5032/images
