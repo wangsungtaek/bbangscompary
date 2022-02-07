@@ -32,4 +32,5 @@ logging:
 
 file:
   upload:
-    path: /gun5032/images
+    mainImg: /gun5032/images
+    collaboImg: /gun5032/images/collaboImg

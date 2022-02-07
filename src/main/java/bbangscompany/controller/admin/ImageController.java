@@ -30,7 +30,7 @@ public class ImageController {
 
     private final ImageService imageService;
 
-    @Value("${file.upload.path}")
+    @Value("${file.upload.mainImg}")
     private String imageBasePath;
 
     /**

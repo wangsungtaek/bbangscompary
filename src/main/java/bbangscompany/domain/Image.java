@@ -6,11 +6,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-import static javax.persistence.FetchType.*;
-
-@Getter
-@Setter
 @Entity
+@Getter @Setter
 public class Image {
 
     @Id
