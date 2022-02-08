@@ -57,7 +57,7 @@
 <!--                        </div>-->
 
                         <div th:each="collaborate : ${collaborates}" class="col-lg-3 col-md-3 col-sm-3 col-3 d-flex align-items-center justify-content-center">
-                            <img th:src="${collaborate}" class="img-fluid" alt="">
+                            <img th:src="'/imagePath/collaboImg/'+${collaborate.imgName}" class="img-fluid" alt="">
 
                         </div>
 
