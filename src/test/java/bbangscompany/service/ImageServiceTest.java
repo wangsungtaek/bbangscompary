@@ -1,5 +1,8 @@
 package bbangscompany.service;
 
+import bbangscompany.config.WebConfig;
+import bbangscompany.controller.admin.CollaborateController;
+import bbangscompany.controller.admin.ImageController;
 import bbangscompany.domain.ChannelName;
 import bbangscompany.domain.Division;
 import bbangscompany.domain.Image;
@@ -9,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +32,15 @@ class ImageServiceTest {
 
     @Autowired
     ImageRepository imageRepository;
+
+    @MockBean
+    WebConfig webConfig;
+
+    @MockBean
+    CollaborateController collaborateController;
+
+    @MockBean
+    ImageController imageController;
 
     @Test
     //@Rollback(value = false)

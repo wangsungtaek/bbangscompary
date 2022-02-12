@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="common/admin_layout">
+<head>
+    <title>ADMIN</title>
+    <th:block layout:fragment="css">
+        <style>
+
+        </style>
+    </th:block>
+</head>
+
+<body id="page-top">
+<th:block layout:fragment="content">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Side bar -->
+        <div th:replace="common/admin_sidebar :: sidebar"/>
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mt-5 text-gray-800">커버 이미지 관리</h1>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+
+                            <!-- 현재 커버 이미지 -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    현재 커버 이미지
+                                </div>
+
+                                <div class="card-body">
+                                    <img th:src="@{/img/main_slides_1.jpg}" class="img-fluid"/>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- End of Row -->
+
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <!-- 커버 이미지 정보 -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    현재 커버 이미지
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="currentCoverImageName">이미지명</span>
+                                        <input type="text" class="form-control" aria-describedby="currentCoverImageName" readonly>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="currentCoverImageDescription">이미지 설명</span>
+                                        <input type="text" class="form-control" aria-describedby="currentCoverImageDescription" readonly>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="currentCoverImageWidth">이미지 가로 사이즈</span>
+                                        <input type="text" class="form-control" aria-describedby="currentCoverImageWidth" readonly>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="currentCoverImageHeight">이미지 세로 사이즈</span>
+                                        <input type="text" class="form-control" aria-describedby="currentCoverImageHeight" readonly>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-6">
+                            <!-- 변경 이미지 정보 -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    커버 이미지 변경
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="updateCoverImageName">등록된 이미지명</span>
+                                        <input type="text" class="form-control" aria-describedby="updateCoverImageName">
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; bbangs</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+</th:block>
+<th:block layout:fragment="js">
+<script>
+
+</script>
+</th:block>
+
+
+</body>
+</html>
