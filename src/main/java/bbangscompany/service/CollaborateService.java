@@ -44,7 +44,7 @@ public class CollaborateService {
     @Transactional
     public void updateCollaborate(Long id, String link) {
         Collaborate collaborate = collaborateRepository.findOne(id);
-        collaborate.setLink(link);
+        collaborate.changeCollaborate(link);
     }
 
     /**

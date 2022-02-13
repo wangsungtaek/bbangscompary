@@ -30,4 +30,20 @@ public class Image {
 //    private User user;
 
     private LocalDateTime createDate;
+
+    /**
+     * 이미지 업데이트
+     */
+    public void changeImage(ChannelName channelName, String link) {
+        this.channelName = channelName;
+        this.link = link;
+
+        if (channelName == ChannelName.블로그) {
+            this.division = Division.blog;
+        } else if (channelName == ChannelName.인스타그램) {
+            this.division = Division.instagram;
+        } else if (channelName == ChannelName.유튜브) {
+            this.division = Division.youtube;
+        }
+    }
 }

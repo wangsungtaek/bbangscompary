@@ -23,4 +23,11 @@ public class Collaborate {
     private String link;
 
     private LocalDateTime createDate;
+
+    /**
+     * 협력사 업데이트
+     */
+    public void changeCollaborate(String link) {
+        this.link = link;
+    }
 }
