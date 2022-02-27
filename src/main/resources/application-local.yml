@@ -8,7 +8,13 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
-
+  devtools:
+    livereload:
+      enabled: true
+  resources.static-locations: file:src/main/resources/static/
+  thymeleaf:
+    cache: false
+    prefix: file:src/main/resources/templates/
   jpa:
     hibernate:
       ddl-auto: none
@@ -38,3 +44,4 @@ file:
   upload:
     mainImg: /Users/wangsungtaek/images
     collaboImg: /Users/wangsungtaek/images/collaboImg
+    coverImg: /Users/wangsungtaek/images/coverImg

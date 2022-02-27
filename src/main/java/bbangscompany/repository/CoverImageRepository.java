@@ -31,5 +31,4 @@ public class CoverImageRepository {
 
         return coverImage;
     }
-
 }

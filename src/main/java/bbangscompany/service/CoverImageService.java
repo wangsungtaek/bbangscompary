@@ -24,7 +24,8 @@ public class CoverImageService {
     @Transactional
     public Long createOrUpdate(CoverImage coverImage) {
 
-        CoverImage findCoverImage = coverImageRepository.findOne(coverImage.getId());
+        log.info("coverImage.getId() : " + coverImage.getId() );
+        CoverImage findCoverImage = coverImageRepository.findOne(1L);
 
         if (findCoverImage == null) {
             log.info("커버 이미지 등록");
@@ -35,6 +36,7 @@ public class CoverImageService {
             findCoverImage.setImgName(coverImage.getImgName());
             findCoverImage.setWidth(coverImage.getWidth());
             findCoverImage.setHeight(coverImage.getHeight());
+            findCoverImage.setDescription(coverImage.getDescription());
             findCoverImage.setUpdate_date(LocalDateTime.now());
         }
 

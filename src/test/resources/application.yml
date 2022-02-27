@@ -38,3 +38,4 @@ spring:
     upload:
       mainImg: /Users/wangsungtaek/images
       collaboImg: /Users/wangsungtaek/images/collaboImg
+      coverImg: /Users/wangsungtaek/images/coverImgg

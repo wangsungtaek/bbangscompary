@@ -4,7 +4,6 @@ import bbangscompany.domain.ChannelName;
 import bbangscompany.domain.Division;
 import bbangscompany.domain.Image;
 import bbangscompany.service.ImageService;
-import jdk.internal.net.http.common.Log;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.swing.filechooser.FileSystemView;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;

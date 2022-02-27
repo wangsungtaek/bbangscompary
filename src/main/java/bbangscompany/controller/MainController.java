@@ -4,6 +4,7 @@ import bbangscompany.domain.Image;
 import bbangscompany.domain.Picture;
 import bbangscompany.domain.ContactUs;
 import bbangscompany.service.ContactUsService;
+import bbangscompany.service.CoverImageService;
 import bbangscompany.service.ImageService;
 import bbangscompany.service.MainService;
 import lombok.RequiredArgsConstructor;
@@ -22,11 +23,14 @@ public class MainController {
     private final MainService mainService;
     private final ContactUsService contactUsService;
     private final ImageService imageService;
+    private final CoverImageService coverImageService;
 
     @GetMapping("")
     public String savePicture(Model model) {
 
         List<Image> images = imageService.findImages();
+
+        model.addAttribute("coverImage", coverImageService.findOne(1L));
         model.addAttribute("images", images);
 
         return "main";
